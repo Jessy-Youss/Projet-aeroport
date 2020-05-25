@@ -1,0 +1,51 @@
+<br>
+<div class="container">
+<div class="row">
+    <div class="col-md-3 col-sm-3 col-lg-3 col-ld-3"></div>
+     <div class="col-md-6 col-sm-6 border col-lg-6 col-ld-6 rounded" style="background-color:rgb(24, 91, 133); color: white;">
+    <section>
+      <br>
+      <h6>Nom: {{a.nom}} </h6>
+      <h6>Prénom: {{a.prenom}}     </h6>
+      <h6>Sexe: {{a.sexe}}   </h6>
+      <h6>Date de naissance: {{a.date_de_naissance | date:"dd/MM/yy"}}  </h6>
+      <h6> Mail: {{a.adresse_mail}} </h6>
+      <h6>Adresse: {{a.adresse}}   </h6>
+      <h6>Téléphone: {{a.telephone}}  </h6>
+      <h6>E-ticket: {{a.adresse}} </h6>
+      <h6 id="nbre_bag">nombre de bagage: {{a.nombre_bagage}}</h6><br>
+      <div class="text-right">
+      <button type="button" class="btn btn-light" data-toggle="modal" data-target='#m'>Peser bagage</button><br><br>
+      </div>
+    </section>
+  </div>
+  </div>
+  
+
+  <!--Page modal peser bagage-->
+  <div class="modal fade" id='m' tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle_Voyageur">Bagage {{num_bag}} </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="val">{{poids}} kg</p>
+          <br><br><br>
+        </div>
+        <div class="modal-footer">
+          <!--btn enregister bagage-->
+          <button *ngIf="save_bag" (click)="save_bagage()" type="button" class="btn btn-primary" [disabled]="verif_save">Enregistrer le bagage</button>
+          <!--btn bagage suivant-->
+          <button *ngIf="next_bag" (click)="next_bagage()" type="button" class="btn btn-primary" [disabled]="!verif_save" >Bagage suivant</button>
+          <!--btn paiement-->
+          <button *ngIf="paiement" (click)="recup_somme()" type="button" class="btn btn-primary" data-dismiss="modal">Passer au paiement</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

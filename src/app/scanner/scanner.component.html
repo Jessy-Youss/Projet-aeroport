@@ -1,0 +1,44 @@
+<div class="container">
+    <div>
+    
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title" id="exampleModalLabel">Identification</h6>
+          </div>
+          <div class="modal-body">
+            <h6 style= "text-decoration: underline"> Scanner le billet</h6>
+            <img src ="../assets/image/tenor.gif" style="width: 200px; text-align: center;" >
+            <!--Input-->
+            <input  type="text" [(ngModel)]="numero" >
+            <!--Button-->
+            <button  (click)="verif_billet()">Valider</button>
+          </div>
+          <!--Loading-->
+          <div *ngIf="verifLoad" class="modal-footer">
+            <button class="btn btn-primary" >
+              <span class="spinner-border spinner-border-sm"></span>
+              Loading...
+            </button>
+          </div>
+           <!--Réesayer-->
+           <div *ngIf="verifErr" class="modal-footer" >
+            <button (click)="initErr()" class="btn btn-danger " >
+              <span class="glyphicon glyphicon-asterisk"></span>
+             Réessayer
+            </button>
+          </div>
+            <!--Suivant-->
+            <div  *ngIf="verifSuivant" class="modal-footer">
+              <button (click)="recup_billet()" class="btn btn-success">
+              Suivant
+              </button>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+    
+   
+    

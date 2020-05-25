@@ -1,0 +1,56 @@
+<!--Div de la carte-->
+<div id="login">    
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <div>
+                        <br>
+                        <h3 class="text-center">Carte</h3>
+                        <div class="form-group">
+                            <label for="username"><h6>Scanner le numéro: </h6></label><br>
+                            <input type="text" class="form-control" [(ngModel)]="num_carte">
+                        </div>
+                        <div class="text-right">
+                        <button class="btn btn-primary" id="btnValider" (click)="aff_solde()">valider</button>
+                          <h6 id="somme" class="text-left">Somme à payer: {{somme}} €</h6>
+                          <h6 id="solde" class="text-left">Solde: {{solde.montant}} €</h6>
+                        </div>
+                        <br>
+                        </div>
+                         <button *ngIf="solde_suff" (click)="payer()" class="btn btn-success" id="payer" data-toggle="modal" data-target='#myModal'>Payer</button>
+                        <div *ngIf="solde_insuff" class="alert alert-danger" role="alert" id="insuffisant">
+                            Solde insuffisant
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Page modal-->
+<div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class=" icone" style="display: flex;"> 
+				<div class="icon-box" >
+					<i class="material-icons">&#xE876;</i>
+					<br>
+				</div>
+			<h4 style="margin-left: 10px;color: white;">  paiement accepté</h4>
+			</div>
+            </div>
+            <!--Bas de page modal-->
+            <div style="display: flex;">
+			<div class="modal-body text-left">
+				<h6 id="solde_new" style="margin-top: 18px;">Solde: {{new_solde}} €</h6>	
+            </div>
+            <div class="modal-body text-right">
+				<button class="btn">Imprimer les tickets</button>
+            </div>
+            </div>
+		</div>
+	</div>
+</div>
