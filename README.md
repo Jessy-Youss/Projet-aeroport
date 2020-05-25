@@ -1,10 +1,14 @@
-# Youssif
+# Projet_aeroport
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+For the server Angular: Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+For the server Node.js: Run `node route.js` route.js is in the folder 'Node.js'. 
+
+## Warning
+don't forget to install modules (Axios, Cors, body-parser...)
 
 ## Code scaffolding
 
